@@ -13,34 +13,34 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 210 15% 97%; /* Very light grey */
+    --foreground: 220 20% 15%; /* Dark bluish-grey text */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 90%; /* Lighter grey for muted backgrounds */
+    --muted-foreground: 210 10% 40%; /* Medium grey for muted text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%; /* White popover */
+    --popover-foreground: 220 20% 15%; /* Dark popover text */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 210 15% 85%; /* Light grey border */
+    --input: 210 15% 90%; /* Light grey input */
 
-    --card: transparent;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%; /* Pure white card background */
+    --card-foreground: 220 20% 15%; /* Dark card text */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 185 80% 50%; /* Vibrant cyan/blue (e.g. #0cd6ef) */
+    --primary-foreground: 220 20% 10%; /* Very dark text on primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 15% 90%; /* Light grey secondary background */
+    --secondary-foreground: 220 20% 15%; /* Dark secondary text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 185 80% 95%; /* Very light cyan accent background */
+    --accent-foreground: 185 80% 30%; /* Darker cyan accent text */
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
 
-    --ring: 215 20.2% 65.1%;
+    --ring: 185 80% 60%; /* Slightly brighter cyan for focus rings */
 
     --radius: 0.5rem;
   }
@@ -61,8 +61,8 @@
     --border: 216 34% 17%;
     --input: 216 34% 17%;
 
-    --card: transparent;
-    --card-foreground: 213 31% 91%;
+    --card: 224 71% 4%; /* Dark card background for dark theme */
+    --card-foreground: 213 31% 91%; /* Light card text for dark theme */
 
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 1.2%;
