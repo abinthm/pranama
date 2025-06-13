@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { ThemeToggle } from "../../components/ui/theme-toggle";
-import { ArrowRight, CheckCircle, Activity, Database, MessageSquare, Pill, BarChart3, Stethoscope, Brain } from "lucide-react";
+import { ArrowRight, CheckCircle, Activity, Database, MessageSquare, Pill, BarChart3, Stethoscope, Brain, Menu } from "lucide-react";
 
 export const LandingPage = (): JSX.Element => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="bg-background text-foreground min-h-screen w-full transition-colors duration-300">
       {/* Header/Navigation */}
@@ -19,19 +21,41 @@ export const LandingPage = (): JSX.Element => {
           <div className="flex items-center space-x-1 bg-muted/90 rounded-full px-2 py-0 shadow-lg backdrop-blur-md">
             <a href="#modules" className="text-muted-foreground font-light hover:font-bold transition-all px-2 py-0 rounded-full hover:text-primary focus:text-primary text-xs">Modules</a>
             <a href="#about" className="text-muted-foreground font-light hover:font-bold transition-all px-2 py-0 rounded-full hover:text-primary focus:text-primary text-xs">About</a>
-            <a href="/contact" className="text-muted-foreground font-light hover:font-bold transition-all px-2 py-0 rounded-full hover:text-primary focus:text-primary text-xs">Contact</a>
             <a href="#pricing" className="text-muted-foreground font-light hover:font-bold transition-all px-2 py-0 rounded-full hover:text-primary focus:text-primary text-xs">Pricing</a>
+            <a href="#contact" className="text-muted-foreground font-light hover:font-bold transition-all px-2 py-0 rounded-full hover:text-primary focus:text-primary text-xs">Contact</a>
             <span className="ml-1 flex items-center text-base"><ThemeToggle /></span>
           </div>
         </nav>
         <div className="flex items-center space-x-2 pr-4">
+          {/* Mobile menu toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground focus:outline-none"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
           <button className="bg-primary text-primary-foreground px-3 py-0.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-xs h-7">Get Started</button>
         </div>
       </header>
 
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-12 left-0 w-full bg-background z-40 transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} py-4 shadow-lg`}
+      >
+        <nav className="flex flex-col items-center space-y-4">
+          <a href="#modules" className="text-foreground hover:text-primary text-base" onClick={() => setIsMobileMenuOpen(false)}>Modules</a>
+          <a href="#about" className="text-foreground hover:text-primary text-base" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+          <a href="#pricing" className="text-foreground hover:text-primary text-base" onClick={() => setIsMobileMenuOpen(false)}>Pricing</a>
+          <a href="#contact" className="text-foreground hover:text-primary text-base" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+          <ThemeToggle />
+        </nav>
+      </div>
+
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center px-8 py-20 mt-12">
-        <Card className="bg-card dark:bg-card w-full max-w-4xl relative shadow-blue-glow dark:shadow-none">
+        <Card className="bg-card dark:bg-card w-full max-w-4xl relative shadow-blue-glow">
           <CardContent className="p-8 text-center">
             {/* Main Logo */}
             <div className="mb-8">
