@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { ThemeToggle } from "../../components/ui/theme-toggle";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Activity, Info, DollarSign, Box } from "lucide-react";
 
 export const ContactPage = (): JSX.Element => {
   return (
@@ -15,6 +15,7 @@ export const ContactPage = (): JSX.Element => {
             src="/frame-5.svg"
           />
         </div>
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
           <a href="/#modules" className="text-[#12b8ca] dark:text-[#12b8ca] text-gray-700 hover:text-[#0cd6ef] transition-colors hover:font-bold font-light">Modules</a>
           <a href="/#about" className="text-[#12b8ca] dark:text-[#12b8ca] text-gray-700 hover:text-[#0cd6ef] transition-colors hover:font-bold font-light">About</a>
@@ -22,14 +23,30 @@ export const ContactPage = (): JSX.Element => {
           <ThemeToggle />
         </nav>
         <div className="flex items-center space-x-4">
-          <div className="md:hidden">
-            <ThemeToggle />
-          </div>
           <button className="bg-[#0cd6ef] text-[#04171d] px-6 py-2 rounded-lg font-semibold hover:bg-[#12b8ca] transition-colors">
             Get Started
           </button>
         </div>
       </header>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="flex items-center space-x-2 bg-[#04171d]/90 rounded-full px-4 py-2 shadow-lg backdrop-blur-md">
+          <a href="/#modules" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
+            <Box className="h-5 w-5" />
+          </a>
+          <a href="/#about" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
+            <Info className="h-5 w-5" />
+          </a>
+          <a href="/#pricing" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
+            <DollarSign className="h-5 w-5" />
+          </a>
+          <a href="/contact" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
+            <Mail className="h-5 w-5" />
+          </a>
+          <ThemeToggle />
+        </div>
+      </nav>
 
       {/* Contact Section */}
       <section className="px-8 py-32 mt-[88px]">
