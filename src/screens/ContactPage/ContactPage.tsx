@@ -30,19 +30,19 @@ export const ContactPage = (): JSX.Element => {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex items-center space-x-2 bg-[#04171d]/90 rounded-full px-4 py-2 shadow-lg backdrop-blur-md">
+      <nav className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="flex items-center space-x-4 bg-[#04171d]/30 rounded-full px-6 py-3 shadow-lg backdrop-blur-md border border-[#0cd6ef]/20 shadow-blue-glow">
           <a href="/#modules" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
-            <Box className="h-5 w-5" />
+            <Box className="h-6 w-6" />
           </a>
           <a href="/#about" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
-            <Info className="h-5 w-5" />
+            <Info className="h-6 w-6" />
           </a>
           <a href="/#pricing" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
-            <DollarSign className="h-5 w-5" />
+            <DollarSign className="h-6 w-6" />
           </a>
           <a href="/contact" className="text-[#12b8ca] hover:text-[#0cd6ef] transition-all p-2 rounded-full">
-            <Mail className="h-5 w-5" />
+            <Mail className="h-6 w-6" />
           </a>
           <ThemeToggle />
         </div>
